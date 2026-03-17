@@ -1,0 +1,600 @@
+// ─────────────────────────────────────────
+// lib/data/food_database.dart
+// Nigerian food database — 40+ locally available foods
+// Prices reflect 2024 Nigerian market rates
+// ─────────────────────────────────────────
+
+import '../models/food_model.dart';
+
+class FoodDatabase {
+  static const List<FoodItem> allFoods = [
+
+    // ═══════════════════════════════════
+    // CARBOHYDRATES (staples)
+    // ═══════════════════════════════════
+
+    FoodItem(
+      id: 'white_rice',
+      name: 'White Rice',
+      localName: 'Iresi',
+      emoji: '🍚',
+      typeStr: 'carb',
+      glycemicImpactStr: 'high',
+      fiberLevel: 1.0,
+      proteinLevel: 2.5,
+      carbLevel: 9.0,
+      calories: 206,
+      priceNaira: 250,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 cup cooked',
+      description: 'Common Nigerian staple. High GI — always pair with beans or vegetables.',
+      goodPairingIds: ['beans', 'ugu_greens', 'tomato_stew', 'mackerel'],
+      healthBenefits: ['Quick energy', 'Affordable'],
+    ),
+
+    FoodItem(
+      id: 'ofada_rice',
+      name: 'Ofada Rice',
+      localName: 'Ofada',
+      emoji: '🟤',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 3.5,
+      proteinLevel: 3.0,
+      carbLevel: 8.0,
+      calories: 195,
+      priceNaira: 350,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 cup cooked',
+      description: 'Nigerian brown rice variant. Lower GI, more nutrients than white rice.',
+      goodPairingIds: ['beans', 'ugu_greens', 'ayamase_stew'],
+      healthBenefits: ['Higher fibre', 'Lower GI than white rice', 'More minerals'],
+    ),
+
+    FoodItem(
+      id: 'garri',
+      name: 'Garri',
+      localName: 'Garri / Eba',
+      emoji: '🥣',
+      typeStr: 'carb',
+      glycemicImpactStr: 'high',
+      fiberLevel: 1.5,
+      proteinLevel: 1.0,
+      carbLevel: 9.5,
+      calories: 360,
+      priceNaira: 100,
+      mealCategories: ['breakfast', 'lunch', 'dinner'],
+      servingSize: '2 cups soaked / 1 wrap eba',
+      description: 'Very popular and cheap. Very high GI — must pair with groundnuts, milk, or beans.',
+      goodPairingIds: ['groundnuts', 'milk', 'beans', 'egusi_soup', 'okra_soup'],
+      healthBenefits: ['Very affordable', 'Long shelf life', 'Easily available'],
+    ),
+
+    FoodItem(
+      id: 'yam',
+      name: 'Yam',
+      localName: 'Isu',
+      emoji: '🍠',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 4.0,
+      proteinLevel: 2.0,
+      carbLevel: 8.5,
+      calories: 177,
+      priceNaira: 200,
+      mealCategories: ['breakfast', 'lunch', 'dinner'],
+      servingSize: '2 medium slices',
+      description: 'Nutritious Nigerian staple. Medium GI — better than rice or garri when boiled.',
+      goodPairingIds: ['egg', 'ugu_greens', 'tomato_sauce', 'beans'],
+      healthBenefits: ['Good potassium source', 'Vitamin B6', 'Natural energy'],
+    ),
+
+    FoodItem(
+      id: 'plantain_unripe',
+      name: 'Unripe Plantain',
+      localName: 'Ogede Agbagba',
+      emoji: '🍌',
+      typeStr: 'carb',
+      glycemicImpactStr: 'low',
+      fiberLevel: 5.5,
+      proteinLevel: 1.5,
+      carbLevel: 7.0,
+      calories: 122,
+      priceNaira: 150,
+      mealCategories: ['breakfast', 'lunch', 'dinner'],
+      servingSize: '1 medium plantain',
+      description: '★ Diabetes-friendly! Low GI, high resistant starch. Boil or roast — do not fry.',
+      goodPairingIds: ['beans', 'egg', 'fish', 'ugu_greens'],
+      healthBenefits: ['Low glycemic', 'Resistant starch', 'Good for diabetes', 'High fibre'],
+    ),
+
+    FoodItem(
+      id: 'plantain_ripe',
+      name: 'Ripe Plantain (Dodo)',
+      localName: 'Dodo',
+      emoji: '🍳',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 2.5,
+      proteinLevel: 1.0,
+      carbLevel: 8.5,
+      calories: 146,
+      priceNaira: 150,
+      mealCategories: ['breakfast', 'lunch', 'dinner'],
+      servingSize: '3 slices fried or 1 boiled',
+      description: 'Sweeter than unripe plantain. Avoid frying for diabetics. Pair with beans.',
+      goodPairingIds: ['beans', 'egg', 'ugu_greens'],
+      healthBenefits: ['Potassium', 'Vitamin A', 'Natural sweetness'],
+    ),
+
+    FoodItem(
+      id: 'oats',
+      name: 'Oatmeal',
+      localName: 'Oats',
+      emoji: '🥣',
+      typeStr: 'carb',
+      glycemicImpactStr: 'low',
+      fiberLevel: 8.0,
+      proteinLevel: 5.0,
+      carbLevel: 7.0,
+      calories: 147,
+      priceNaira: 200,
+      mealCategories: ['breakfast'],
+      servingSize: '1 cup cooked',
+      description: '★ Excellent breakfast for diabetics. Very high fibre slows sugar absorption.',
+      goodPairingIds: ['egg', 'milk', 'groundnuts', 'banana'],
+      healthBenefits: ['Lowers cholesterol', 'Excellent for diabetes', 'Beta-glucan fibre', 'Keeps you full'],
+    ),
+
+    FoodItem(
+      id: 'pap',
+      name: 'Ogi / Pap',
+      localName: 'Akamu / Ogi',
+      emoji: '🍶',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 1.0,
+      proteinLevel: 1.5,
+      carbLevel: 7.0,
+      calories: 90,
+      priceNaira: 100,
+      mealCategories: ['breakfast'],
+      servingSize: '1 bowl',
+      description: 'Traditional Nigerian porridge. Pair with akara or moi moi for protein balance.',
+      goodPairingIds: ['akara', 'moi_moi', 'milk', 'egg'],
+      healthBenefits: ['Easy to digest', 'Probiotic properties', 'Good for gut health'],
+    ),
+
+    // ═══════════════════════════════════
+    // PROTEINS
+    // ═══════════════════════════════════
+
+    FoodItem(
+      id: 'beans',
+      name: 'Beans',
+      localName: 'Ewa / Wake',
+      emoji: '🫘',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 9.0,
+      proteinLevel: 8.5,
+      carbLevel: 5.0,
+      calories: 227,
+      priceNaira: 200,
+      mealCategories: ['breakfast', 'lunch', 'dinner'],
+      servingSize: '1 cup cooked',
+      description: '★ SUPERFOOD: High protein + fibre. Dramatically reduces GI of paired carbs.',
+      goodPairingIds: ['white_rice', 'garri', 'plantain_unripe', 'plantain_ripe', 'yam'],
+      healthBenefits: [
+        'Reduces blood sugar spikes',
+        'Heart-healthy',
+        'High plant protein',
+        'Very high fibre',
+        'Affordable superfood',
+      ],
+    ),
+
+    FoodItem(
+      id: 'egg',
+      name: 'Egg',
+      localName: 'Eyin / Kwai',
+      emoji: '🥚',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 0.0,
+      proteinLevel: 9.0,
+      carbLevel: 0.5,
+      calories: 72,
+      priceNaira: 150,
+      mealCategories: ['breakfast', 'lunch', 'any'],
+      servingSize: '2 eggs',
+      description: 'Affordable complete protein. Boil or poach — avoid frying daily.',
+      goodPairingIds: ['yam', 'plantain_unripe', 'oats', 'bread', 'tomato_sauce'],
+      healthBenefits: ['Complete protein', 'Vitamins A, D, B12', 'Affordable', 'Keeps you full'],
+    ),
+
+    FoodItem(
+      id: 'mackerel',
+      name: 'Mackerel Fish (Titus)',
+      localName: 'Titus / Eja',
+      emoji: '🐟',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 0.0,
+      proteinLevel: 9.5,
+      carbLevel: 0.0,
+      calories: 205,
+      priceNaira: 300,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 medium fish',
+      description: 'Rich in omega-3. Excellent for heart health and hypertension management.',
+      goodPairingIds: ['white_rice', 'yam', 'ugu_greens', 'tomato_stew'],
+      healthBenefits: ['Omega-3 fatty acids', 'Heart-healthy', 'Anti-inflammatory', 'High protein'],
+    ),
+
+    FoodItem(
+      id: 'catfish',
+      name: 'Catfish (Point & Kill)',
+      localName: 'Eja Aro / Kifi',
+      emoji: '🐠',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 0.0,
+      proteinLevel: 9.0,
+      carbLevel: 0.0,
+      calories: 185,
+      priceNaira: 400,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 medium piece',
+      description: 'Popular Nigerian fish. Lean protein, great for weight management.',
+      goodPairingIds: ['ugu_greens', 'tomato_stew', 'ofada_rice'],
+      healthBenefits: ['Lean protein', 'Low calorie', 'Good for weight loss'],
+    ),
+
+    FoodItem(
+      id: 'moi_moi',
+      name: 'Moi Moi',
+      localName: 'Moi Moi',
+      emoji: '🫕',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 5.0,
+      proteinLevel: 7.5,
+      carbLevel: 4.0,
+      calories: 160,
+      priceNaira: 200,
+      mealCategories: ['breakfast', 'lunch', 'snack'],
+      servingSize: '2 wraps',
+      description: 'Steamed bean pudding. Excellent protein + fibre combination. Great for diabetics.',
+      goodPairingIds: ['pap', 'garri', 'ogi'],
+      healthBenefits: ['High protein and fibre', 'Low glycemic', 'Easy to digest', 'Diabetes-friendly'],
+    ),
+
+    FoodItem(
+      id: 'akara',
+      name: 'Akara (Bean Cakes)',
+      localName: 'Akara',
+      emoji: '🟤',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 4.5,
+      proteinLevel: 7.0,
+      carbLevel: 4.5,
+      calories: 180,
+      priceNaira: 150,
+      mealCategories: ['breakfast', 'snack'],
+      servingSize: '3 pieces',
+      description: 'Fried bean cakes — traditional Nigerian breakfast. Rich protein and fibre.',
+      goodPairingIds: ['pap', 'ogi', 'bread'],
+      healthBenefits: ['High protein', 'Fibre-rich', 'Affordable', 'Filling breakfast'],
+    ),
+
+    FoodItem(
+      id: 'groundnuts',
+      name: 'Groundnuts',
+      localName: 'Epa / Gyada',
+      emoji: '🥜',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 5.0,
+      proteinLevel: 8.0,
+      carbLevel: 2.5,
+      calories: 166,
+      priceNaira: 100,
+      mealCategories: ['breakfast', 'snack', 'any'],
+      servingSize: '2 tablespoons / small handful',
+      description: '★ Perfect garri pairing! Protein + healthy fat + fibre. Dramatically reduces GI spike.',
+      goodPairingIds: ['garri', 'pap', 'banana', 'corn'],
+      healthBenefits: ['Healthy fats', 'High protein', 'Reduces GI of carbs', 'Very affordable'],
+    ),
+
+    FoodItem(
+      id: 'milk',
+      name: 'Milk / Evaporated Milk',
+      localName: 'Wara / Milk',
+      emoji: '🥛',
+      typeStr: 'protein',
+      glycemicImpactStr: 'low',
+      fiberLevel: 0.0,
+      proteinLevel: 6.0,
+      carbLevel: 3.0,
+      calories: 103,
+      priceNaira: 150,
+      mealCategories: ['breakfast', 'any'],
+      servingSize: '1 cup / small tin',
+      description: 'Pairs perfectly with garri or pap to add protein and reduce sugar spike.',
+      goodPairingIds: ['garri', 'pap', 'oats', 'akara'],
+      healthBenefits: ['Calcium', 'Protein', 'Reduces GI when added to carbs'],
+    ),
+
+    // ═══════════════════════════════════
+    // VEGETABLES & FIBER-RICH FOODS
+    // ═══════════════════════════════════
+
+    FoodItem(
+      id: 'ugu_greens',
+      name: 'Ugwu (Pumpkin Leaf)',
+      localName: 'Ugwu / Efo Elegede',
+      emoji: '🥬',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 8.5,
+      proteinLevel: 3.5,
+      carbLevel: 1.0,
+      calories: 25,
+      priceNaira: 100,
+      mealCategories: ['lunch', 'dinner', 'any'],
+      servingSize: '1 cup cooked',
+      description: '★ Nigerian superfood! Extremely high in iron, folate, and fibre. Add to any meal.',
+      goodPairingIds: ['white_rice', 'garri', 'yam', 'mackerel', 'beans'],
+      healthBenefits: ['Very high iron', 'Folate for pregnancy', 'Lowers blood sugar', 'Very affordable'],
+    ),
+
+    FoodItem(
+      id: 'okra',
+      name: 'Okra',
+      localName: 'Ila / Kubewa',
+      emoji: '🫛',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 7.5,
+      proteinLevel: 2.0,
+      carbLevel: 2.0,
+      calories: 33,
+      priceNaira: 100,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 cup cooked',
+      description: 'High in mucilage fibre which slows sugar absorption in the gut. Excellent for diabetes.',
+      goodPairingIds: ['garri', 'eba', 'fufu', 'white_rice'],
+      healthBenefits: ['Blood sugar control', 'Gut health', 'Lowers cholesterol', 'High vitamin C'],
+    ),
+
+    FoodItem(
+      id: 'tomato',
+      name: 'Tomatoes',
+      localName: 'Tomatisi / Tomato',
+      emoji: '🍅',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 3.0,
+      proteinLevel: 1.0,
+      carbLevel: 1.5,
+      calories: 18,
+      priceNaira: 50,
+      mealCategories: ['lunch', 'dinner', 'any'],
+      servingSize: '2 medium tomatoes',
+      description: 'Base of Nigerian stew. Rich in lycopene — heart-protective antioxidant.',
+      goodPairingIds: ['white_rice', 'yam', 'mackerel', 'egg'],
+      healthBenefits: ['Lycopene antioxidant', 'Heart-healthy', 'Vitamin C', 'Low calorie'],
+    ),
+
+    FoodItem(
+      id: 'garden_egg',
+      name: 'Garden Egg',
+      localName: 'Igba / Garden Egg',
+      emoji: '🍆',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 6.0,
+      proteinLevel: 1.0,
+      carbLevel: 2.0,
+      calories: 20,
+      priceNaira: 80,
+      mealCategories: ['lunch', 'dinner', 'snack'],
+      servingSize: '2 medium pieces',
+      description: 'Excellent for hypertension. Lowers blood pressure naturally.',
+      goodPairingIds: ['groundnuts', 'fish', 'beans'],
+      healthBenefits: ['Lowers blood pressure', 'Antioxidants', 'Very low calorie', 'High fibre'],
+    ),
+
+    FoodItem(
+      id: 'spinach',
+      name: 'Spinach / Waterleaf',
+      localName: 'Efo / Gbure',
+      emoji: '🌿',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 7.0,
+      proteinLevel: 3.0,
+      carbLevel: 1.0,
+      calories: 23,
+      priceNaira: 100,
+      mealCategories: ['lunch', 'dinner', 'any'],
+      servingSize: '1 cup cooked',
+      description: 'Iron-rich Nigerian vegetable. Great in egusi, okra, or any soup.',
+      goodPairingIds: ['white_rice', 'yam', 'garri', 'mackerel'],
+      healthBenefits: ['High iron', 'Folate', 'Vitamin K', 'Eye health'],
+    ),
+
+    FoodItem(
+      id: 'cucumber',
+      name: 'Cucumber',
+      localName: 'Kukamba',
+      emoji: '🥒',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 3.0,
+      proteinLevel: 0.5,
+      carbLevel: 1.0,
+      calories: 16,
+      priceNaira: 100,
+      mealCategories: ['snack', 'any'],
+      servingSize: 'Half cucumber',
+      description: 'Excellent hydrating snack. Great for hypertension due to potassium content.',
+      goodPairingIds: ['groundnuts', 'egg'],
+      healthBenefits: ['Hydrating', 'Lowers blood pressure', 'Very low calorie', 'Antioxidants'],
+    ),
+
+    // ═══════════════════════════════════
+    // SOUPS & STEWS (meal components)
+    // ═══════════════════════════════════
+
+    FoodItem(
+      id: 'egusi_soup',
+      name: 'Egusi Soup',
+      localName: 'Ofe Egusi',
+      emoji: '🍲',
+      typeStr: 'fat',
+      glycemicImpactStr: 'low',
+      fiberLevel: 5.0,
+      proteinLevel: 6.5,
+      carbLevel: 2.5,
+      calories: 220,
+      priceNaira: 350,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 serving (with eba/fufu)',
+      description: 'Melon seed soup — protein and healthy fat. Excellent paired with vegetables.',
+      goodPairingIds: ['garri', 'fufu', 'white_rice', 'ugu_greens'],
+      healthBenefits: ['High protein', 'Healthy fats', 'Zinc', 'Magnesium'],
+    ),
+
+    FoodItem(
+      id: 'okra_soup',
+      name: 'Okra Soup',
+      localName: 'Ila Alasepo',
+      emoji: '🟢',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 8.0,
+      proteinLevel: 4.0,
+      carbLevel: 2.5,
+      calories: 120,
+      priceNaira: 250,
+      mealCategories: ['lunch', 'dinner'],
+      servingSize: '1 bowl with swallow',
+      description: '★ Excellent for diabetics! Okra mucilage significantly slows glucose absorption.',
+      goodPairingIds: ['garri', 'fufu', 'yam'],
+      healthBenefits: ['Lowers blood sugar', 'Gut-friendly fibre', 'Heart health', 'Diabetes-friendly'],
+    ),
+
+    FoodItem(
+      id: 'tomato_stew',
+      name: 'Nigerian Tomato Stew',
+      localName: 'Obe Ata',
+      emoji: '🍛',
+      typeStr: 'vegetable',
+      glycemicImpactStr: 'low',
+      fiberLevel: 3.5,
+      proteinLevel: 2.0,
+      carbLevel: 3.0,
+      calories: 85,
+      priceNaira: 150,
+      mealCategories: ['lunch', 'dinner', 'any'],
+      servingSize: '2 tablespoons',
+      description: 'Base Nigerian stew. Use less palm oil for heart health. Great with fish or eggs.',
+      goodPairingIds: ['white_rice', 'yam', 'plantain_unripe', 'egg', 'mackerel'],
+      healthBenefits: ['Lycopene', 'Vitamin C', 'Anti-inflammatory'],
+    ),
+
+    // ═══════════════════════════════════
+    // SNACKS & EXTRAS
+    // ═══════════════════════════════════
+
+    FoodItem(
+      id: 'banana',
+      name: 'Banana',
+      localName: 'Ogede / Ayaba',
+      emoji: '🍌',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 3.5,
+      proteinLevel: 1.0,
+      carbLevel: 7.0,
+      calories: 89,
+      priceNaira: 50,
+      mealCategories: ['breakfast', 'snack'],
+      servingSize: '1 medium banana',
+      description: 'Excellent ulcer-soothing food. Good potassium source for blood pressure.',
+      goodPairingIds: ['groundnuts', 'oats', 'milk'],
+      healthBenefits: ['Potassium', 'Soothes ulcers', 'Natural energy', 'Very affordable'],
+    ),
+
+    FoodItem(
+      id: 'corn',
+      name: 'Boiled / Roasted Corn',
+      localName: 'Oka / Masara',
+      emoji: '🌽',
+      typeStr: 'carb',
+      glycemicImpactStr: 'medium',
+      fiberLevel: 4.0,
+      proteinLevel: 3.5,
+      carbLevel: 7.0,
+      calories: 96,
+      priceNaira: 100,
+      mealCategories: ['snack', 'breakfast'],
+      servingSize: '1 medium cob',
+      description: 'Traditional Nigerian snack. Always pair with ube or groundnut for protein balance.',
+      goodPairingIds: ['groundnuts', 'coconut', 'ube'],
+      healthBenefits: ['B vitamins', 'Antioxidants', 'Reasonable fibre', 'Energy'],
+    ),
+
+    FoodItem(
+      id: 'ube',
+      name: 'Ube (African Pear)',
+      localName: 'Ube',
+      emoji: '🟣',
+      typeStr: 'fat',
+      glycemicImpactStr: 'low',
+      fiberLevel: 6.0,
+      proteinLevel: 3.0,
+      carbLevel: 3.0,
+      calories: 190,
+      priceNaira: 100,
+      mealCategories: ['snack', 'any'],
+      servingSize: '3-4 pieces',
+      description: 'Traditional pairing with corn. Healthy fat + fibre combo reduces corn GI impact.',
+      goodPairingIds: ['corn', 'garri'],
+      healthBenefits: ['Healthy monounsaturated fat', 'Fibre', 'Vitamins', 'Traditional food'],
+    ),
+  ];
+
+  /// Get food by ID
+  static FoodItem? getById(String id) {
+    try {
+      return allFoods.firstWhere((f) => f.id == id);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Get foods by meal category
+  static List<FoodItem> forMeal(String meal) =>
+      allFoods.where((f) => f.suitableFor(meal)).toList();
+
+  /// Get foods within budget
+  static List<FoodItem> withinBudget(int budget) =>
+      allFoods.where((f) => f.priceNaira <= budget).toList();
+
+  /// Get foods by type
+  static List<FoodItem> byType(String type) =>
+      allFoods.where((f) => f.typeStr == type).toList();
+
+  /// Get high-fibre foods
+  static List<FoodItem> get highFibre =>
+      allFoods.where((f) => f.fiberLevel >= 5.0).toList()
+        ..sort((a, b) => b.fiberLevel.compareTo(a.fiberLevel));
+
+  /// Get diabetes-safe foods (low GI)
+  static List<FoodItem> get diabetesFriendly =>
+      allFoods.where((f) => f.glycemicImpactStr == 'low').toList();
+}
